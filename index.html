@@ -7,8 +7,8 @@
 </head>
 <body class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen flex flex-col items-center p-4 relative">
 
-  <!-- Hidden Flute Audio with Autoplay -->
-  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/10/24/audio_c2c536c601.mp3?filename=divine-flute-123931.mp3" loop autoplay hidden></audio>
+  <!-- Hidden Flute Audio -->
+  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/10/24/audio_c2c536c601.mp3?filename=divine-flute-123931.mp3" loop hidden></audio>
 
   <!-- Play Flute Music Button -->
   <button id="playMusicButton" class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600">
@@ -103,10 +103,10 @@
 
     // Play music only when user clicks Play button
     const playMusicButton = document.getElementById('playMusicButton');
+    const music = document.getElementById('bgMusic');
     playMusicButton.addEventListener('click', () => {
-      const music = document.getElementById('bgMusic');
       music.muted = false; // Unmute
-      music.play();
+      music.play(); // Start playing music
       playMusicButton.style.display = 'none'; // Hide button after playing
     });
   </script>
